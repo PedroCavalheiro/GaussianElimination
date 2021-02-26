@@ -27,9 +27,9 @@ public class Gauss {
 		BigDecimal max = null;
 		for (int i = getLine(); i < matrix.lines(); i++) {
 			if (max == null || (
-				matrix.data[i][getLine()].compareTo(max) >= 1 && 
-				matrix.data[i][getLine()].compareTo(BigDecimal.ZERO) != 0)) {
-				max = matrix.data[i][getLine()];
+				matrix.data[i][getLine()].abs().compareTo(max.abs()) >= 1 && 
+				matrix.data[i][getLine()].abs().compareTo(BigDecimal.ZERO) != 0)) {
+				max = matrix.data[i][getLine()].abs();
 				result = i;
 			}
 		}
